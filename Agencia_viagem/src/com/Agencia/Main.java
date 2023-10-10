@@ -1,9 +1,13 @@
 package com.Agencia;
 
+import com.Agencia.database.DataBaseConnection;
+
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		
+		DataBaseConnection.createConnection();
 
 	}
 
