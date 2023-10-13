@@ -1,0 +1,23 @@
+package com.Agencia.menu;
+
+import java.util.Scanner;
+
+public class MenuIO {
+
+	public static int menu(Scanner scanner) {
+		int option = Integer.MAX_VALUE;
+		System.out.println("Escolhar uma opção de 1 - 4 \n" + "1 - Menu Cliente \n" + "2 - Menu Destino \n"
+				+ "3 - MenuReserva \n" + "4 - SAIR\n");
+		
+		
+		return scanner.nextInt();
+		switch (option) {
+
+		case 1:
+		default:
+			System.out.println("Digite uma opção valida");
+		}
+	  }while(option!=0);
+
+	return option;
+}}}

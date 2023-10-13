@@ -1,0 +1,15 @@
+package com.Agencia.menu;
+
+import java.util.Scanner;
+
+public class MenuIO {
+
+	public static int menu(Scanner scanner) {
+
+		System.out.println("Escolhar uma opção de 1 - 4 \n" + "1 - Menu Cliente \n" + "2 - Menu Destino \n"
+				+ "3 - Menu Reserva \n" + "4 -Sair \n");
+		
+		
+		return scanner.nextInt();
+	}
+}

@@ -1,0 +1,38 @@
+package com.Agencia.menu;
+
+import java.util.Scanner;
+
+public class MenuIO {
+
+
+	    public static int menu(Scanner scanner) {
+	        int option;
+	        
+	        do {
+	            System.out.println("Escolha uma opção de 1 - 4 \n" + "1 - Menu Cliente \n" + "2 - Menu Destino \n"
+	                + "3 - Menu Reserva \n" + "4 - Sair  \n");
+
+	            
+	            option = MenuIO.menu(scanner);
+
+	            switch (option) {
+	                case 1:
+	                   // ClienteIO.SubMenuCliente(scanner);
+	                    break;
+	                case 2:
+	                    // Faça algo para o Menu Destino
+	                    break;
+	                case 3:
+	                    // Faça algo para o Menu Reserva
+	                    break;
+	                case 4:
+	                    System.out.println("Saindo do programa...");
+	                    break;
+	                default:
+	                    System.out.println("Digite uma opção válida");
+	            }
+	        } while (option != 4); // O loop continua até a opção 4 ser selecionada
+
+	        return option;
+	    }
+	}

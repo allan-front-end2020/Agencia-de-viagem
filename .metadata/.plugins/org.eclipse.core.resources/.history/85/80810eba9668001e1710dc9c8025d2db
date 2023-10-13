@@ -1,0 +1,100 @@
+package com.Agencia.model;
+
+public class Cliente {
+	
+	
+     private int idCliente;
+     
+     private String nomeCliente;
+     
+     private String cpfCliente;
+     
+	 private String telCliente;
+     
+     
+     
+     
+	public Cliente() {
+		super();
+		
+	}
+
+
+
+	public Cliente(String nomeCliente, String cpfCliente, String telCliente) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.cpfCliente = cpfCliente;
+		this.telCliente = telCliente;
+	}
+
+	
+	
+
+
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
+
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+
+
+	public String getCpfCliente() {
+		return cpfCliente;
+	}
+
+
+
+	public void setCpfCliente(String cpfCliente) {
+		this.cpfCliente = cpfCliente;
+	}
+
+
+
+	public String getTelCliente() {
+		return telCliente;
+	}
+
+
+
+	public void setTelCliente(String telCliente) {
+		this.telCliente = telCliente;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", nomeCliente=" + nomeCliente + ", cpfCliente=" + cpfCliente
+				+ ", telCliente=" + telCliente + ", getIdCliente()=" + getIdCliente() + ", getNomeCliente()="
+				+ getNomeCliente() + ", getCpfCliente()=" + getCpfCliente() + ", getTelCliente()=" + getTelCliente()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+     
+     
+     
+     
+
+
+        
+     
+
+}

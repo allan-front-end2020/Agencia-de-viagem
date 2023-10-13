@@ -1,0 +1,36 @@
+package com.Agencia.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.Agencia.model.Cliente;
+
+public class ClienteDAO {
+
+	
+	private static String sql;
+	
+	private final Connection  connection ;
+	
+	public ClienteDAO( Connection  connection) {
+		this.connection = connection ;
+	}
+	
+	
+	//CREATE
+	public void createCliente(Cliente cliente) {
+		sql = "INSERT INTO cliente (nomeCliente, cpfCliente, telCliente ) VALUE (?,?,?,?)";
+		try (PreparedStatement stmt = connection.prepareStatement(sql)){
+			
+			stmt.setString(1,  cliente.getNomeCliente());
+			stmt.setString(2,  cliente.getCpfCliente());
+			stmt.setString(3,  cliente.getTelCliente());
+			
+			stmt.executeUpdate();
+			 System.out.println("cliente creiado com sucesso: " + cliente.getNomeCliente() + cliente.getCpfCliente() +cliente.getTelCliente());
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+} 

@@ -17,19 +17,19 @@ public class DataBaseConnection {
 		
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		System.out.println("driver encontrado");
+		System.out.println();
 	} catch(ClassNotFoundException e ) {
 		
-		System.out.println("driver não encontrado : Menssagen: " + e.getMessage());	
+		System.out.println( e.getMessage());	
 	}
 		
      try {
     	 Connection connection = DriverManager.getConnection(url,user, password);
-    	 System.out.println("Conectado com sucesso");
+    	 System.out.println("");
     	 return connection;
     	 
      } catch(SQLException e){
-    	 System.out.println("Não foi possivel se conectar com o banco: Menssagen: " + e.getMessage());
+    	 System.out.println(  e.getMessage());
     	 return null;
      }
 		

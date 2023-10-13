@@ -1,0 +1,61 @@
+package com.Agencia;
+
+import java.util.Scanner;
+
+import com.Agencia.dao.ClienteDAO;
+import com.Agencia.database.DataBaseConnection;
+import com.Agencia.model.Cliente;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		var connection = DataBaseConnection.createConnection();
+        ClienteDAO clienteDAO = new ClienteDAO(connection);
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		
+		var option = 0;
+		
+	
+		do {
+			
+			System.out.println("Escolhar uma opção de 1 - 4 \n"
+					+ "1 - Create \n"
+					+ "2 - Read \n"
+					+ "3 - Update \n"
+					+ "4 - Delete \n"
+			        + "4 - Sair \n");
+			option = scanner.nextInt();
+			
+			
+			switch (option) {
+			case 1: {
+				Cliente cliente = new Cliente();
+				System.out.println("Nome Completo :");
+				cliente.setNomeCliente(scanner.nextLine
+						());
+				
+				System.out.println("CPF :");
+				cliente.setCpfCliente(scanner.next().trim());
+				
+				System.out.println("Telefone 1:");
+				cliente.setTelCliente(scanner.next());
+				
+		
+		        clienteDAO.createCliente(cliente);
+				
+				break;
+				
+				
+			}
+			default:
+				break;
+			}
+			
+			
+		}while (option != 5 );
+	}
+
+}

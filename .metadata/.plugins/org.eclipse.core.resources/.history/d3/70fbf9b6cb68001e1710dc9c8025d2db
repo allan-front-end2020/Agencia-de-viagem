@@ -1,0 +1,45 @@
+package com.Agencia;
+
+import com.Agencia.dao.ClienteDAO;
+import com.Agencia.database.DataBaseConnection;
+import com.Agencia.model.Cliente;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		var connection = DataBaseConnection.createConnection();
+
+		ClienteDAO clienteDAO = new ClienteDAO(connection);
+
+		Cliente cliente = new Cliente("jose", "11111111111", "22222222222");
+		//cliente.setIdCliente(1);
+		
+		//clienteDAO.updateCliente(cliente);
+		 
+		
+		
+		
+
+		// Create Cliente
+		//cliente.setNomeCliente("Allan Tavares");
+	//	cliente.setTelCliente("1194949494");
+		//cliente.setCpfCliente("399.959.924-30");
+		
+		
+		//clienteDAO.createCliente(cliente);
+
+		
+		clienteDAO.readAllClients();
+		
+		//clienteDAO.deleteCliente(2);;
+		
+		
+		
+		
+	}
+	
+	 
+	
+
+}

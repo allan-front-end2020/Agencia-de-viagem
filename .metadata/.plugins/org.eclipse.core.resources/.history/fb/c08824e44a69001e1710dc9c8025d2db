@@ -1,0 +1,38 @@
+package com.Agencia.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.Agencia.model.Destino;
+
+public class DestinoDAO {
+
+	private static String sql;
+
+	private final Connection connection;
+
+	public DestinoDAO(Connection connection) {
+		this.connection = connection;
+
+	}
+
+	// create
+	public void createDestino(Destino destino) {
+
+		sql = "INSERT INTO destino (nomeDestino, precoDia ) VALUE (?,?)";
+		try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+			stmt.setString(1, destino.getNomeDestino());
+			stmt.setInt(2, destino.getPreçoDia());
+
+			stmt.executeUpdate();
+			System.out
+					.println("Destino cadatrado com sucesso !!!: " + destino.getNomeDestino() + destino.getPreçoDia());
+		} catch (SQLException e) {
+			System.out.println("[LOG] Não foi possivel cadastrar destino" + e.getMessage());
+		}
+
+	}
+
+}
